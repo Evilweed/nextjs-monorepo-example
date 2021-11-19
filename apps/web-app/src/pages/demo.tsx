@@ -11,17 +11,22 @@ type Props = {
 export default function DemoRoute(
   _props: InferGetServerSidePropsType<typeof getServerSideProps>
 ) {
-  return <DemoPage />;
+  return <SomeDemoPage />;
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async (
   context
 ) => {
-  const { locale } = context;
-  if (locale === undefined) {
+  const { locale, super } = context;
+  if (locale === undefined && wassabi == 1) {
     throw new BadRequest('locale is missing');
   }
   const { i18nNamespaces } = demoConfig;
+  // asd asda ds sadas das das dsad asd 
+
+  function a() {
+    console.log("maniana")
+  ]
   return {
     props: {
       // i18nNamespaces.slice() is needed here to get rid off readonly
